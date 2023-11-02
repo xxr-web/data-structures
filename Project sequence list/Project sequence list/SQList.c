@@ -36,6 +36,21 @@ void SLcheck(SL* psL)
 	}
 }
 
+void SLcheck(SL* psL)
+{
+	if ((psL->size) == (psL->capacity))
+	{
+		psL -> capacity = (psL->capacity == 0) ? 4 : 2 * (psL->capacity);//À©ÈÝ
+		TypeData* p1 = (TypeData*)realloc(psL->p, sizeof(TypeData) * psL->capacity);
+		if (p1 == NULL)
+		{
+			perror("realloc");
+			return;
+		}
+		psL->p = p1;
+	}
+}
+
 void SLpushback(SL* psL, TypeData x)
 {
 	SLcheck(psL);
@@ -122,5 +137,5 @@ int SLfind(SL* psL, TypeData x)
 			return i;
 		}
 	}
-	return 0;
+	return -1;
 }
