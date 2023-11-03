@@ -45,7 +45,7 @@ void SLTpushback(SLNode** pphead, SLNDataType x)
 		//	tail = tail->next;
 		//}//这个是不可以的，两点原因，1.和前面的连不上了，没有链接起来。2.出了作用域后，tail被销毁，就找不到新创建的这个结点了，内存泄漏。
 		//SLNode newnode//这是不可以的，因为这是局部变量，出去了就销毁了。
-		SLNode* newnode = CreatNode(x);
+		SLNode* newnode = CreateNode(x);
 		tail->next = newnode;//改变外面的结构体的成员，用结构体指针访问。
 	}
 }
@@ -58,5 +58,44 @@ void SLTpushFront(SLNode** pphead, SLNDataType x)
 	SLNode* newnode = CreateNode(x);
 	newnode->next = *pphead;
 	*pphead = newnode;//单链表非常适合头插
+}
+
+void SLTPopBack(SLNode** pphead)
+{
+	assert(*pphead);
+	if ((*pphead)->next == NULL)//SList1个结点
+	{
+		free(*pphead);
+		*pphead = NULL;
+	}
+	else
+	{
+		//SLNode* tail = *pphead;
+		//SLNode* tmptail = NULL;
+		//while (tail->next != NULL)
+		//{
+		//	tmptail = tail;
+		//	tail = tail->next;
+		//}
+		//free(tail);
+		//tail = NULL;
+		//tmptail->next = NULL;//一个结点时会报错
+		SLNode* tail = *pphead;
+		while (tail->next->next != NULL)
+		{
+			tail = tail->next;
+		}
+		free(tail->next);
+		tail->next = NULL;
+	}
+}
+
+void SLTPopFront(SLNode** pphead)
+{
+	assert(*pphead);
+	SLNode* phead = *pphead;
+	*pphead = phead->next;
+	free(phead);
+	phead = NULL;
 }
 

@@ -15,7 +15,7 @@
 //	return 0;
 //}
 
-int main()
+void test1()
 {
 	SLNode* SList = NULL;
 	SLTpushback(&SList, 1);
@@ -23,5 +23,38 @@ int main()
 	SLTpushback(&SList, 3);
 	SLTpushback(&SList, 4);
 	SLTprint(SList);
+	SLTPopBack(&SList);
+	SLTprint(SList);
+	SLTPopBack(&SList);
+	SLTprint(SList);
+	SLTPopBack(&SList);
+	SLTprint(SList);
+	SLTPopBack(&SList);
+	SLTprint(SList);
+	/*SLTPopBack(&SList);
+	SLTprint(SList);*/
+}
+
+void test2()
+{
+	SLNode* SList = NULL;
+	SLTpushFront(&SList, 1);
+	SLTpushFront(&SList, 2);
+	SLTpushFront(&SList, 3);
+	SLTpushFront(&SList, 4);
+	SLTprint(SList);
+	SLTPopFront(&SList);
+	SLTprint(SList);
+	SLTPopFront(&SList);
+	SLTprint(SList);
+	SLTPopFront(&SList);
+	SLTprint(SList);
+	SLTPopFront(&SList);
+	SLTprint(SList);
+}
+int main()
+{
+	//test1();
+	test2();
 	return 0;
 }

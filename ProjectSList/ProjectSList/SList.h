@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <assert.h>
 
 typedef int SLNDataType;
 
@@ -17,3 +18,10 @@ typedef struct SListNode
 void SLTprint(SLNode* phead);
 SLNode* CreateNode(SLNDataType x);
 void SLTpushback(SLNode** phead, SLNDataType x);
+void SLTpushFront(SLNode** pphead, SLNDataType x);
+void SLTPopBack(SLNode** pphead);
+void SLTPopFront(SLNode** pphead);
+SLNode* SLTFind(SLNode* phead, SLNDataType x);
+void SLTInsert(SLNode** pphead, SLNode* pos, SLNDataType x);//‘⁄pos«∞≤Â»Î
+void SLTErase(SLNode** pphead, SLNode* pos);
+void SLTdestroy(SLNode** phead);
