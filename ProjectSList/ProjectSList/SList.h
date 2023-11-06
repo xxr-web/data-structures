@@ -24,4 +24,6 @@ void SLTPopFront(SLNode** pphead);
 SLNode* SLTFind(SLNode* phead, SLNDataType x);
 void SLTInsert(SLNode** pphead, SLNode* pos, SLNDataType x);//‘⁄pos«∞≤Â»Î
 void SLTErase(SLNode** pphead, SLNode* pos);
+void SLTInsertAfter(SLNode* pos, SLNDataType x);
+void SLTEraseAfter(SLNode* pos);
 void SLTdestroy(SLNode** phead);

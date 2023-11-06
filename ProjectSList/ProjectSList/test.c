@@ -55,6 +55,13 @@ void test2()
 int main()
 {
 	//test1();
-	test2();
+	//test2();
+	/*int b = 2;
+	int a = b;
+	b = 3;
+	printf("%d\n", a);*/
+	int a = 3, b = 10;
+	int c = abs(a - b);
+	printf("%d\n", c);
 	return 0;
 }
