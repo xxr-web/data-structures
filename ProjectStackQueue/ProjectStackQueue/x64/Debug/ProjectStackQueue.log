@@ -1,2 +1,3 @@
-﻿  Stack.c
+﻿  Queue.c
+D:\桌面\github托管\data-structures\ProjectStackQueue\ProjectStackQueue\Queue.h(1,1): warning C4828: 文件包含在偏移 0x27b 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
   ProjectStackQueue.vcxproj -> D:\桌面\github托管\data-structures\ProjectStackQueue\x64\Debug\ProjectStackQueue.exe
