@@ -3,17 +3,28 @@
 
 void test1()
 {
-	HDataType arr[10] = { 2, 1, 10, 5, 3, 7, 6, 4, 9, 8 };
-	HP H;
-	HPIni(&H);
+	HP heap;
+	HP* h = &heap;
+	HPIni(h);
+	int arr[10] = { 17, 21, 25, 100, 300, 3, 10, 212, 1000, 10000 };
 	int i = 0;
 	for (i = 0; i < 10; i++)
 	{
-		HPPush(&H, arr[i]);
+		HPPush(h, arr[i]);
 	}
+	printf("%d\n", HPSize(h));
+	while (!HPEmpty(h))
+	{
+		printf("%d ", HPTop(h));
+		HPPop(h);
+	}
+	printf("\n");
+	printf("%d\n", HPSize(h));
+	HPDestroy(h);
 }
 
 int main()
 {
 	test1();
+	return 0;
 }

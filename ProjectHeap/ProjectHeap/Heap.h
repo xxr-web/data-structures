@@ -1,22 +1,37 @@
 #pragma once
 #include <stdio.h>
 #include <stdlib.h>
-#include <errno.h>
 #include <assert.h>
+#include <errno.h>
+#include <stdbool.h>
 
-typedef int HDataType;
+typedef int HPDataType;
 
 typedef struct Heap
 {
-	HDataType* a;
+	HPDataType* a;
 	int size;
 	int capacity;
 }HP;
 
 void HPIni(HP* php);
+
 void HPDestroy(HP* php);
-void Swap(HDataType* p1, HDataType* p2);
-void HPAdjustUp(HDataType* a, int child);
-void HPPush(HP* php, HDataType x);
+
+void Swap(HPDataType* p1, HPDataType* p2);
+
+void HPAdjustUp(HPDataType* p, int x);
+
+void HPPush(HP* php, HPDataType x);
+
+void HPAdjustDown(HP* p, int parent);
+
+void HPPop(HP* php);
+
+bool HPEmpty(HP* php);
+
+HPDataType HPTop(HP* php);
+
+int HPSize(HP* php);
 
 
